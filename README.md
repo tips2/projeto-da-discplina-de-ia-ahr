@@ -11,7 +11,7 @@ Como resultado preliminar, pode-se concluir que os atributos que causam maior im
 - Medu (nível de educação da mãe)
 - Fedu (nível de educação do pai)
 - studytime
-- failures (númeor de reprovações anteriores)
+- failures (número de reprovações anteriores)
 - schoolsup (suporte escolar)
 - famsup (suporte familiar)
 - internet
