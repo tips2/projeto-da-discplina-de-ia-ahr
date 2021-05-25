@@ -24,17 +24,17 @@ Como resultado preliminar, pode-se concluir que os atributos que causam maior im
 
 # Construção do motor de inferência
 
-A construção do motor de inferência se dará com o uso da biblioteca `Pyke`, disponível na linguagem de programação Python.
+A construção do motor de inferência se dará com o uso do pacote `backward` que implementa a técnica de inferência do encadeamento para trás. No _fork_ do repositório foi implementado algumas funcionalidades adicionais.
 
-> http://pyke.sourceforge.net/index.html
+> https://github.com/hugotallys/backward
 
-Dada a base de conhecimento consolidada na etapa anterior e um conjunto de fatos dados como entrada do programa, o objetivo do módulo de inferência será:
+# Instruções de execução da aplicação
 
-* Através do _encadeamento para frente_:
-    * Concluir novos _fatos_;
-    * Ativar outras regras de bases de conhecimento mais específicas;
-* Através do _encademeamento para trás_:
-    * Provar um fato específico (_goal_), isto é responder uma _pergunta_;
+```console
 
+$ pip install -r requirements.txt
+$ git clone https://github.com/hugotallys/backward.git
+$ pip install -r backward/requirements.txt
+$ python main.py
 
-# Integração com o RASA
+```
