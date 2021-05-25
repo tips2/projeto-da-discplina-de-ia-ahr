@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     # Defining our knowledge base
     
-    load_knowledge_base("A_BIN.txt", ctx)
+    load_knowledge_base("data/A_BIN.txt", ctx)
 
     # Let's bind some questions to ask the user whenever the value of the variable is unknown.
 
