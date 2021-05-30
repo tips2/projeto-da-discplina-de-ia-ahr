@@ -23,23 +23,35 @@ if __name__ == "__main__":
     ctx = Backward()
 
     # Defining our knowledge base
+    # Base de matemática
+    load_knowledge_base("data/mat-bin.txt", ctx)
     
-    load_knowledge_base("data/A_BIN.txt", ctx)
+    # Base de português
+    # load_knowledge_base("data/port-bin.txt", ctx)
 
     # Let's bind some questions to ask the user whenever the value of the variable is unknown.
 
-    ctx.bind_question("ABSENCES_MENOR_IGUAL_9", parse_question("ABSENCES_MENOR_IGUAL_9"))
-    ctx.bind_question("G1_MENOR_IGUAL_7", parse_question("G1_MENOR_IGUAL_7"))
-    ctx.bind_question("ABSENCES_MENOR_IGUAL_10", parse_question("ABSENCES_MENOR_IGUAL_10"))
-    ctx.bind_question("G1_MENOR_IGUAL_10", parse_question("G1_MENOR_IGUAL_10"))
-    ctx.bind_question("FAILURES_IGUAL_0", parse_question("FAILURES_IGUAL_0"))
-    ctx.bind_question("G2_MENOR_IGUAL_7", parse_question("G2_MENOR_IGUAL_7"))
+    ctx.bind_question("G2_MENOR_IGUAL_8", parse_question("G2_MENOR_IGUAL_8"))
     ctx.bind_question("G2_MENOR_IGUAL_9", parse_question("G2_MENOR_IGUAL_9"))
-    ctx.bind_question("AGE_MENOR_IGUAL_17", parse_question("AGE_MENOR_IGUAL_17?"))
-    ctx.bind_question("ABSENCES_MENOR_IGUAL_13", parse_question("ABSENCES_MENOR_IGUAL_13"))
-    ctx.bind_question("ABSENCES_MENOR_IGUAL_15", parse_question("ABSENCES_MENOR_IGUAL_15"))
-    ctx.bind_question("ABSENCES_MENOR_IGUAL_1", parse_question("ABSENCES_MENOR_IGUAL_1"))
-    ctx.bind_question("ABSENCES_MENOR_IGUAL_8", parse_question("ABSENCES_MENOR_IGUAL_8"))
+    ctx.bind_question("GOOUT_MENOR_IGUAL_2", parse_question("GOOUT_MENOR_IGUAL_2"))
+    ctx.bind_question("FEDU_MENOR_IGUAL_2", parse_question("FEDU_MENOR_IGUAL_2"))
+    ctx.bind_question("SUTUDYTIME_MENOR_IGUAL_3", parse_question("SUTUDYTIME_MENOR_IGUAL_3"))
+    ctx.bind_question("STUDYTIME_MENOR_IGUAL_1", parse_question("STUDYTIME_MENOR_IGUAL_1"))
+    ctx.bind_question("G1_MENOR_IGUAL_8", parse_question("G1_MENOR_IGUAL_8"))
+    ctx.bind_question("G1_MENOR_IGUAL_9", parse_question("G1_MENOR_IGUAL_9"))
+    ctx.bind_question("G1_MENOR_IGUAL_10", parse_question("G1_MENOR_IGUAL_10"))
+    ctx.bind_question("FAMSUP_IGUAL_0", parse_question("FAMSUP_IGUAL_0"))
+    ctx.bind_question("AGE_MENOR_IGUAL_17", parse_question("AGE_MENOR_IGUAL_17"))
+    ctx.bind_question("G1_MENOR_IGUAL_8", parse_question("G1_MENOR_IGUAL_8"))
+    ctx.bind_question("FAILURES_MENOR_IGUAL_2", parse_question("FAILURES_MENOR_IGUAL_2"))
+    ctx.bind_question("FAILURES_MENOR_IGUAL_2", parse_question("FAILURES_MENOR_IGUAL_2"))
+    ctx.bind_question("FEDU_MENOR_IGUAL_1", parse_question("FEDU_MENOR_IGUAL_1"))
+    ctx.bind_question("FEDU_MENOR_IGUAL_3", parse_question("FEDU_MENOR_IGUAL_3"))
+    ctx.bind_question("FREETIME_MENOR_IGUAL_2", parse_question("FREETIME_MENOR_IGUAL_2"))
+    ctx.bind_question("GOOUT_MENOR_IGUAL_4", parse_question("GOOUT_MENOR_IGUAL_4"))
+    ctx.bind_question("GOOUT_MENOR_IGUAL_1", parse_question("GOOUT_MENOR_IGUAL_1"))
+    ctx.bind_question("SCHOOLSUP_IGUAL_0", parse_question("SCHOOLSUP_IGUAL_0"))
+    ctx.bind_question("WALC_MENOR_IGUAL_4", parse_question("WALC_MENOR_IGUAL_4"))
 
     # Initial facts
 
