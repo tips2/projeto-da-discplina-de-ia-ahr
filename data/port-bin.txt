@@ -13,9 +13,3 @@ Nota2_MENOR_IGUAL_8 & !Nota1_MENOR_IGUAL_8 & SuporteEscolar_IGUAL_0 & !Reprovaco
 !Nota2_MENOR_IGUAL_8 & Nota1_MENOR_IGUAL_9 & Nota2_MENOR_IGUAL_9 & Idade_MENOR_IGUAL_17 & ConsumoAlcool_MENOR_IGUAL_4 & !EducacaoDoPai_MENOR_IGUAL_1 & EducacaoDoPai_MENOR_IGUAL_3 & !TempoLivre_MENOR_IGUAL_2 => PASS
 !Nota2_MENOR_IGUAL_8 & Nota1_MENOR_IGUAL_9 & Nota2_MENOR_IGUAL_9 & Idade_MENOR_IGUAL_17 & ConsumoAlcool_MENOR_IGUAL_4 & !EducacaoDoPai_MENOR_IGUAL_1 & !EducacaoDoPai_MENOR_IGUAL_3 & SairComAmigos_MENOR_IGUAL_4 => FAIL
 !Nota2_MENOR_IGUAL_8 & Nota1_MENOR_IGUAL_9 & Nota2_MENOR_IGUAL_9 & Idade_MENOR_IGUAL_17 & ConsumoAlcool_MENOR_IGUAL_4 & !EducacaoDoPai_MENOR_IGUAL_1 & !EducacaoDoPai_MENOR_IGUAL_3 & !SairComAmigos_MENOR_IGUAL_4 => PASS
-
-
-
-
-
-
