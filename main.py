@@ -1,11 +1,22 @@
+import re
 from backward.backward import Backward
 
 
 def load_knowledge_base(path, ctx):
 
+    symbols = []
+
     with open(path, "r") as txt_file:
+        
         for line in txt_file:
+            symbols.append(line.split(" "))
             ctx.evaluate(line.replace("\n", ""))
+    
+    symbols = [s.replace("FAIL", "").replace("PASS", "") for ss in symbols for s in ss]
+    symbols = [re.sub(r"[&!=><\n]", "", s) for s in symbols]
+    symbols = [s for s in symbols if s != ""]
+
+    return sorted(symbols)
 
 
 def parse_question(variable_name):
@@ -19,52 +30,49 @@ def parse_question(variable_name):
 
 
 if __name__ == "__main__":
-    
-    ctx = Backward()
 
-    # Defining our knowledge base
-    # Base de matemática
-    #load_knowledge_base("data/mat-bin.txt", ctx)
-    
-    # Base de português
-    load_knowledge_base("data/port-bin.txt", ctx)
+    print("=========== Sistema Especialista - Rendimento Escolar ===========")
 
-    # Let's bind some questions to ask the user whenever the value of the variable is unknown.
+    while True:
 
-    ctx.bind_question("G2_MENOR_IGUAL_8", parse_question("G2_MENOR_IGUAL_8"))
-    ctx.bind_question("G2_MENOR_IGUAL_9", parse_question("G2_MENOR_IGUAL_9"))
-    ctx.bind_question("GOOUT_MENOR_IGUAL_2", parse_question("GOOUT_MENOR_IGUAL_2"))
-    ctx.bind_question("FEDU_MENOR_IGUAL_2", parse_question("FEDU_MENOR_IGUAL_2"))
-    ctx.bind_question("STUDYTIME_MENOR_IGUAL_3", parse_question("STUDYTIME_MENOR_IGUAL_3"))
-    ctx.bind_question("STUDYTIME_MENOR_IGUAL_1", parse_question("STUDYTIME_MENOR_IGUAL_1"))
-    ctx.bind_question("G1_MENOR_IGUAL_8", parse_question("G1_MENOR_IGUAL_8"))
-    ctx.bind_question("G1_MENOR_IGUAL_9", parse_question("G1_MENOR_IGUAL_9"))
-    ctx.bind_question("G1_MENOR_IGUAL_10", parse_question("G1_MENOR_IGUAL_10"))
-    ctx.bind_question("FAMSUP_IGUAL_0", parse_question("FAMSUP_IGUAL_0"))
-    ctx.bind_question("AGE_MENOR_IGUAL_17", parse_question("AGE_MENOR_IGUAL_17"))
-    ctx.bind_question("FAILURES_MENOR_IGUAL_2", parse_question("FAILURES_MENOR_IGUAL_2"))
-    ctx.bind_question("FAILURES_MENOR_IGUAL_3", parse_question("FAILURES_MENOR_IGUAL_3"))
-    ctx.bind_question("FEDU_MENOR_IGUAL_1", parse_question("FEDU_MENOR_IGUAL_1"))
-    ctx.bind_question("FEDU_MENOR_IGUAL_3", parse_question("FEDU_MENOR_IGUAL_3"))
-    ctx.bind_question("FREETIME_MENOR_IGUAL_2", parse_question("FREETIME_MENOR_IGUAL_2"))
-    ctx.bind_question("GOOUT_MENOR_IGUAL_4", parse_question("GOOUT_MENOR_IGUAL_4"))
-    ctx.bind_question("GOOUT_MENOR_IGUAL_1", parse_question("GOOUT_MENOR_IGUAL_1"))
-    ctx.bind_question("SCHOOLSUP_IGUAL_0", parse_question("SCHOOLSUP_IGUAL_0"))
-    ctx.bind_question("WALC_MENOR_IGUAL_4", parse_question("WALC_MENOR_IGUAL_4"))
-    ctx.bind_question("MEDU_MENOR_IGUAL_1", parse_question("MEDU_MENOR_IGUAL_1"))
+        print(">> Informe a disciplina que o aluno irá cursar ou está cursando.")
 
-    # Initial facts
+        # Defining our knowledge base
 
-    # ctx.evaluate("= ")
+        ctx = Backward()
+        course = input(">> [1] para Língua Portuguesa e [2] para Matemática.\n<< ")
 
-    # Ask a question
+        if course == '1':
+            symbols = load_knowledge_base("data/port-bin.txt", ctx)
+        elif course == '2':
+            symbols = load_knowledge_base("data/mat-bin.txt", ctx)
+        else:
+            raise ValueError(">> Por favor responda [1] ou [2].")
+            
+        # Let's bind some questions to ask the user whenever the value of the variable is unknown.
 
-    # Will th student PASS ?
+        for s in symbols:
+            ctx.bind_question(s, parse_question(s))
 
-    print(">> O estudante irá passar ?")
+        # Ask a question
 
-    answer = ctx.evaluate("PASS")
+        query = input(">> Deseja saber se o estudande irá ser aprovado [a] ou reprovado [r]?\n<< ")
+        
+        if query == "a":
+            print("<< O estudante será aprovado?")
+            answer = ctx.evaluate("PASS")
+            answer = "Sim, é provável que o estudante tenha um bom aproveitamento." if answer[0] else "Não, é provável que o estudante reprove no curso."
+            print(">> " + answer)
+        elif query == "r":
+            print("<< O estudante será reprovado ?")
+            answer = ctx.evaluate("FAIL")
+            answer = "Sim, é provável que o estudante reprove." if answer[0] else "Não, é provável que o estudante tenha um bom aproveitamento."
+            print(">> " + answer)
+        else:
+            raise ValueError(">> Por favor, responda [a] ou [r].")
 
-    answer = "Sim, é provável que o estudante tenha um bom aproveitamento." if answer[0] else "Não, é provável que o estudante reprove no curso."
+        query = input(">> Deseja continuar ? Responda Sim [s] ou Não [n] ?")
 
-    print(answer)
+        if query == "n":
+            print(">> Sessão encerrada.")
+            break
