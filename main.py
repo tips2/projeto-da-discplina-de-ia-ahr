@@ -3,7 +3,13 @@ from backward.backward import Backward
 
 
 def load_knowledge_base(path, ctx):
-
+    """
+    Carrega a base de conhecimento retornando todos os símbolos presentes no consequente das regras.
+    ---
+    Parâmetros
+    path - Caminho do arquivo '.txt' para a base de conhecimento.
+    ctx - Objeto da classe Backward.
+    """
     symbols = []
 
     with open(path, "r") as txt_file:
@@ -20,7 +26,12 @@ def load_knowledge_base(path, ctx):
 
 
 def parse_question(variable_name):
-
+    """
+    Dado o nome de uma variável retorna a pergunta caso o valor da variável seja indefinido.
+    ---
+    Parâmetros
+    variable_name - Nome da variável, deve ser uma string.
+    """
     variable_name = variable_name.split("_")
 
     if len(variable_name) == 4:
