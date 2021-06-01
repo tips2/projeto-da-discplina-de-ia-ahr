@@ -54,9 +54,9 @@ if __name__ == "__main__":
         course = input(">> [1] para Língua Portuguesa e [2] para Matemática.\n<< ")
 
         if course == '1':
-            symbols = load_knowledge_base("data/port-bin.txt", ctx)
+            symbols = load_knowledge_base("data/base_regras_port.txt", ctx)
         elif course == '2':
-            symbols = load_knowledge_base("data/mat-bin.txt", ctx)
+            symbols = load_knowledge_base("data/base_regras_mat.txt", ctx)
         else:
             raise ValueError(">> Por favor responda [1] ou [2].")
             
