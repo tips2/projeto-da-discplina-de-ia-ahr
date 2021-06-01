@@ -1,0 +1,15 @@
+Nota2_MAIOR_8 & Nota1_MAIOR_9 => PASS
+Nota2_MENOR_IGUAL_8 & Nota1_MENOR_IGUAL_8 => FAIL
+Nota2_MAIOR_8 & Nota1_MENOR_IGUAL_9 & Nota2_MAIOR_9 & Reprovacoes_MENOR_IGUAL_2 => PASS
+Nota2_MAIOR_8 & Nota1_MENOR_IGUAL_9 & Nota2_MENOR_IGUAL_9 & Idade_MAIOR_17 & SairComAmigos_MAIOR_1 => PASS
+Nota2_MENOR_IGUAL_8 & Nota1_MAIOR_8 & SuporteEscolar_MENOR_IGUAL_0 & Reprovacoes_MENOR_IGUAL_2 => FAIL
+Nota2_MAIOR_8 & Nota1_MENOR_IGUAL_9 & Nota2_MENOR_IGUAL_9 & Idade_MENOR_IGUAL_17 & ConsumoAlcool_MENOR_IGUAL_4 & EducacaoDoPai_MAIOR_1 & EducacaoDoPai_MAIOR_3 & SairComAmigos_MENOR_IGUAL_4 => FAIL
+Nota2_MAIOR_8 & Nota1_MENOR_IGUAL_9 & Nota2_MENOR_IGUAL_9 & Idade_MENOR_IGUAL_17 & ConsumoAlcool_MENOR_IGUAL_4 & EducacaoDoPai_MAIOR_1 & EducacaoDoPai_MENOR_IGUAL_3 & TempoLivre_MAIOR_2 => PASS
+Nota2_MAIOR_8 & Nota1_MENOR_IGUAL_9 & Nota2_MENOR_IGUAL_9 & Idade_MENOR_IGUAL_17 & ConsumoAlcool_MENOR_IGUAL_4 & EducacaoDoPai_MENOR_IGUAL_1 => FAIL
+Nota2_MAIOR_8 & Nota1_MENOR_IGUAL_9 & Nota2_MENOR_IGUAL_9 & Idade_MENOR_IGUAL_17 & ConsumoAlcool_MAIOR_4 => PASS
+Nota2_MENOR_IGUAL_8 & Nota1_MAIOR_8 & SuporteEscolar_MAIOR_0 => PASS
+Nota2_MAIOR_8 & Nota1_MENOR_IGUAL_9 & Nota2_MAIOR_9 & Reprovacoes_MAIOR_2 => FAIL
+Nota2_MAIOR_8 & Nota1_MENOR_IGUAL_9 & Nota2_MENOR_IGUAL_9 & Idade_MAIOR_17 & SairComAmigos_MENOR_IGUAL_1 => FAIL
+Nota2_MAIOR_8 & Nota1_MENOR_IGUAL_9 & Nota2_MENOR_IGUAL_9 & Idade_MENOR_IGUAL_17 & ConsumoAlcool_MENOR_IGUAL_4 & EducacaoDoPai_MAIOR_1 & EducacaoDoPai_MAIOR_3 & SairComAmigos_MAIOR_4 => PASS
+Nota2_MAIOR_8 & Nota1_MENOR_IGUAL_9 & Nota2_MENOR_IGUAL_9 & Idade_MENOR_IGUAL_17 & ConsumoAlcool_MENOR_IGUAL_4 & EducacaoDoPai_MAIOR_1 & EducacaoDoPai_MENOR_IGUAL_3 & TempoLivre_MENOR_IGUAL_2 => FAIL
+Nota2_MENOR_IGUAL_8 & Nota1_MAIOR_8 & SuporteEscolar_MENOR_IGUAL_0 & Reprovacoes_MAIOR_2 => PASS
