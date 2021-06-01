@@ -35,9 +35,9 @@ def parse_question(variable_name):
     variable_name = variable_name.split("_")
 
     if len(variable_name) == 4:
-        return f"O valor de {variable_name[0]} é {variable_name[1].lower()} ou {variable_name[2].lower()} a {variable_name[3]} ?"
+        return f">> O valor de {variable_name[0]} é {variable_name[1].lower()} ou {variable_name[2].lower()} que {variable_name[3]} ?\n<< "
     
-    return f"O valor de {variable_name[0]} é {variable_name[1].lower()} a {variable_name[2]} ?"
+    return f">> O valor de {variable_name[0]} é {variable_name[1].lower()} que {variable_name[2]} ?\n<< "
 
 
 if __name__ == "__main__":
